@@ -36,3 +36,4 @@ export default router;
 12. Added Navbar from DaisyUI
 13. Learn Shortcut Key: Alt + Shift + F key for auto arrange the codes
 14. To add theme in the projects by using DaisyUI, need to user ``` data-theme="cupcake" ``` inside index.html file within ``` <html data-theme="cupcake"></html> ``` or ``` <body data-theme="cupcake"></body> ``` tag.
+15. Added custom width with Tailwindcss at app.js: ``` <div className='max-w-[1440] mx-auto'> ``` and mx-auto for center alignment.  
