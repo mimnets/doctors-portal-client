@@ -6,9 +6,12 @@
     * ```npm install -D tailwindcss postcss autoprefixer npx tailwindcss init -p```
     * add the paths to all of your template files in your tailwind.config.js file.: ```"./src/**/*.{js,jsx,ts,tsx}",``` 
     * Add the @tailwind directives for each of Tailwind’s layers to your ./src/index.css file. 
-```    @tailwind base;
+    ```
+    @tailwind base;
     @tailwind components;
-    @tailwind utilities;```
+    @tailwind utilities;
+    ```
+    
 3. Installed DaisyUI: 
     * ```npm i daisyui```
     * Then add daisyUI to your tailwind.config.js files: plugins: ```[require("daisyui")],```
