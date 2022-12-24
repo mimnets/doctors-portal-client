@@ -36,4 +36,19 @@ export default router;
 12. Added Navbar from DaisyUI
 13. Learn Shortcut Key: Alt + Shift + F key for auto arrange the codes
 14. To add theme in the projects by using DaisyUI, need to user ``` data-theme="cupcake" ``` inside index.html file within ``` <html data-theme="cupcake"></html> ``` or ``` <body data-theme="cupcake"></body> ``` tag.
-15. Added custom width with Tailwindcss at app.js: ``` <div className='max-w-[1440] mx-auto'> ``` and mx-auto for center alignment.  
+15. Added custom width with Tailwindcss at app.js: ``` <div className='max-w-[1440px] mx-auto'> ``` and mx-auto for center alignment.  
+16. Add menu with variable to show multiple location by use react fragment or <></>: 
+```
+    const menuItems = 
+    <React.Fragment>
+        <li><a>Home</a></li>
+        <li><a>Appointment</a></li>
+        <li><a>About</a></li>
+        <li><a>Reviews</a></li>
+        <li><a>Login</a></li>
+    </React.Fragment>
+
+```
+17. Select multi line with : ctrl + alt and down arrow
+18. added banner.js into /home/banner and added margin left and right with mx-5 (5 means 20 px - in tailwind it counts 4 times as pixel)
+19. 
