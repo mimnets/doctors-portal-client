@@ -25,4 +25,6 @@ export default router;
 
 9. Add into Main: <Navbar></Navbar> <Outlet></Outlet><Footer></Footer>
 10. Add into App.js: <RouterProvider router={router}></RouterProvider>
-
+11. Add login page inside Pages
+12. Added Navbar from DaisyUI
+13. Learn Shortcut Key: Alt + Shift + F key for auto arrange the codes
