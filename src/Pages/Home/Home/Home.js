@@ -5,6 +5,7 @@ import InfoCards from '../InfoCards/InfoCards';
 import MakeAppointment from '../MakeAppointment/MakeAppointment';
 import OurServices from '../OurServices/OurServices/OurServices';
 import Testimonial from '../Testimonial/Testimonial';
+import Contacts from './Contacts/Contacts';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <ExceptionService></ExceptionService>
             <MakeAppointment></MakeAppointment>
             <Testimonial></Testimonial>
+            <Contacts></Contacts>
         </div>
     );
 };
