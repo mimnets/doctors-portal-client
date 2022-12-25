@@ -6,7 +6,8 @@ const Contacts = () => {
     return (
         <section 
         style={{
-            background: `url(${appointment})`
+            background: `url(${appointment})`,
+            backgroundSize: 'cover',
         }}
             className="mt-16">
             <div className="hero">
