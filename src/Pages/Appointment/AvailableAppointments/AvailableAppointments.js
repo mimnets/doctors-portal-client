@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 import BookingModal from '../BookingModal/BookingModal';
 import AppointmentOptions from './AppointmentOptions';
 
-const AvailableAppointments = ({selectedDate}) => {
+const AvailableAppointments = ({ selectedDate }) => {
     const [appointmentOptions, setAppointmentOptions] = useState([]);
     const [treatment, setTreatment] = useState(null);
-    useEffect(()=>{
+    useEffect(() => {
         fetch('appointmentOptions.json')
-        .then(res => res.json())
-        .then(data => setAppointmentOptions(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setAppointmentOptions(data))
+    }, [])
 
     return (
         <section className='my-16'>
@@ -22,8 +22,8 @@ const AvailableAppointments = ({selectedDate}) => {
             </div>
             {
                 treatment &&
-                <BookingModal treatment={treatment}></BookingModal>
-                
+                <BookingModal treatment={treatment} selectedDate={selectedDate}></BookingModal>
+
             }
         </section>
     );
