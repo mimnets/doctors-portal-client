@@ -51,4 +51,6 @@ export default router;
 ```
 17. Select multi line with : ctrl + alt and down arrow
 18. added banner.js into /home/banner and added margin left and right with mx-5 (5 means 20 px - in tailwind it counts 4 times as pixel)
-19. 
+
+# Create AuthContext - AuthProvider.js inside context folder under src directory
+# Added .env.local file with firebase authentication credentials - Important :::: .env.local file must be created inside the root directory not in the src directory.
