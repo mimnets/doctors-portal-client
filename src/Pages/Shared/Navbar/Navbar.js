@@ -1,15 +1,33 @@
-import React from 'react';
+import userEvent from '@testing-library/user-event';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
 
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch((error) => console.error(error))
+    }
 
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/appointment'>Appointment</Link></li>
         <li><Link to='/about'>About</Link></li>
-        <li><Link to='/review'>Reviews</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+            user?.uid
+                ?
+                <>
+                    <li><Link to='/review'>Reviews</Link></li>
+                    <li><Link to='/dashboard'>Dashboard</Link></li>
+                    <li><Link onClick={handleLogOut}>Sign Out</Link></li>
+
+                </>
+                :
+                <li><Link to='/login'>Login</Link></li>
+        }
     </React.Fragment>
 
     return (

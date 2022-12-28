@@ -54,3 +54,8 @@ export default router;
 
 # Create AuthContext - AuthProvider.js inside context folder under src directory
 # Added .env.local file with firebase authentication credentials - Important :::: .env.local file must be created inside the root directory not in the src directory.
+# To set observer about the user is login or not at AuthProvider.js:
+* We need to use onAuthProvider
+* First need to use a state - const [user, setUser] = useState(null)
+* Default value should be null
+* Observer set inside the useEffect()
