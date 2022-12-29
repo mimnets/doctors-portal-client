@@ -59,3 +59,5 @@ export default router;
 * First need to use a state - const [user, setUser] = useState(null)
 * Default value should be null
 * Observer set inside the useEffect()
+
+# git commit -m"used useQuery to load data from database instead of using useEffect and useState to store the loaded data"
