@@ -61,3 +61,4 @@ export default router;
 * Observer set inside the useEffect()
 
 # git commit -m"used useQuery to load data from database instead of using useEffect and useState to store the loaded data"
+# Added useNavigate to redirect the user upon successful signup 
