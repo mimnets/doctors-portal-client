@@ -47,6 +47,11 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     {menuItems}
                 </ul>
+                <div className="form-control">
+                    <label className="label cursor-pointer">
+                        <input type="checkbox" className="toggle" checked />
+                    </label>
+                </div>
             </div>
         </div>
     );
