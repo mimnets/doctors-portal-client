@@ -25,7 +25,7 @@ const AvailableAppointments = ({ selectedDate }) => {
             const data = res.json();
             return data;
         }
-    })
+    }) 
 
     // useEffect(() => {
     //     fetch('http://localhost:5000/appointmentoptions')
