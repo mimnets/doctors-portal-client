@@ -1,8 +1,11 @@
 import { format } from 'date-fns';
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ treatment, selectedDate, setTreatment }) => {
     const { name, slots } = treatment;
+    const { user } = useContext(AuthContext)
     const date = format(selectedDate, 'PP');
     const handleBooking = event => {
         event.preventDefault();
@@ -24,7 +27,21 @@ const BookingModal = ({ treatment, selectedDate, setTreatment }) => {
         // And once data is saved then close the modal 
         // And display success toast
         console.log(booking);
-        setTreatment(null);
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(booking),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    setTreatment(null);
+                    toast.success('Booking Confirmed')
+                }
+            })
     }
     return (
         <>
@@ -43,9 +60,9 @@ const BookingModal = ({ treatment, selectedDate, setTreatment }) => {
                                 >{slot}</option>)
                             }
                         </select>
-                        <input name="name" type="text" placeholder="Full Name" className="input input-bordered w-full" />
+                        <input name="name" type="text" defaultValue={user?.displayName} disabled placeholder="Full Name" className="input input-bordered w-full" />
+                        <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input input-bordered w-full" />
                         <input name="phone" type="number" placeholder="Phone Number" className="input input-bordered w-full" />
-                        <input name="email" type="email" placeholder="Email Address" className="input input-bordered w-full" />
                         <input type="submit" value="Submit" className='w-full btn btn-accent' />
                     </form>
                 </div>

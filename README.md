@@ -62,3 +62,11 @@ export default router;
 
 # git commit -m"used useQuery to load data from database instead of using useEffect and useState to store the loaded data"
 # Added useNavigate to redirect the user upon successful signup 
+# How to send the data from client to server - use the below post method to send the data:
+```\        app.post('/bookings', async (req,res)=>{
+            const booking = req.body;
+            console.log(booking);
+            const result = await bookingsCollection.insertOne(booking);
+            res.send(result);
+        })
+```
