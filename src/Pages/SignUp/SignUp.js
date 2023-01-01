@@ -46,7 +46,7 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data);
+            console.log('Save User', data);
             getUserToken(email)
         })
     }
@@ -56,7 +56,7 @@ const SignUp = () => {
         .then(res => res.json())
         .then(data => {
             if(data.accessToken){
-                localStorage.setItem('access_token', data.accessToken);
+                localStorage.setItem('accessToken', data.accessToken);
                 navigate('/');
             }
         })
