@@ -8,7 +8,7 @@ const AddDoctor = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     const imageHostKey = process.env.REACT_APP_imagebb_key;
-    console.log(imageHostKey);
+    // console.log(imageHostKey);
 
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialists'],
@@ -20,7 +20,22 @@ const AddDoctor = () => {
     })
 
     const handleAddDoctor = data => {
-        console.log(data);
+        // console.log(data.image[0]);
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(imgData =>{
+            // console.log(imgData);
+            if(imgData.success){
+                console.log(imgData.data.url)
+            }
+        })
     }
 
     if (isLoading) {
@@ -28,7 +43,7 @@ const AddDoctor = () => {
     }
     return (
         <div className='w-96 p-6'>
-            <h3 className="text-3xl">Add A Doctor</h3>
+            <h3 className="text-4xl">Add A Doctor</h3>
             <div>
                 <form onSubmit={handleSubmit(handleAddDoctor)}>
                     <div className="form-control w-full max-w-xs">
@@ -56,10 +71,10 @@ const AddDoctor = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Photo</span></label>
                         <input type="file"
-                            {...register("file")}
+                            {...register("image")}
                             className="input input-bordered w-full max-w-xs" />
                     </div>
-                    <input className='btn btn-accent w-full mt-4' value="Sing Up" type="submit" />
+                    <input className='btn btn-accent w-full mt-4' value="Add Doctor" type="submit" />
                 </form>
             </div>
         </div>
