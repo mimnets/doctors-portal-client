@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
-import Loading from '../../Shared/Loading/Loading';
 
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
