@@ -6,6 +6,10 @@ import Loading from '../../Shared/Loading/Loading';
 
 const AddDoctor = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
+
+    const imageHostKey = process.env.REACT_APP_imagebb_key;
+    console.log(imageHostKey);
+
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialists'],
         queryFn: async () => {
