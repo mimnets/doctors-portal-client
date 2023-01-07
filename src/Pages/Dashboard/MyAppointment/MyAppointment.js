@@ -20,7 +20,6 @@ const MyAppointment = () => {
         },
     })
 
-
     return (
         <div>
             <h3 className="text-3xl mb-5">My Appointment</h3>
@@ -33,6 +32,7 @@ const MyAppointment = () => {
                             <th>Treatment</th>
                             <th>Date</th>
                             <th>Time</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +44,15 @@ const MyAppointment = () => {
                                     <td>{booking.treatment}</td>
                                     <td>{booking.appointmentDate}</td>
                                     <td>{booking.slot}</td>
+                                    <td>
+                                        {
+                                            booking.price && !booking.paid && <button 
+                                            className='btn btn-primary'>Pay</button>
+                                        }
+                                        {
+                                            booking.price && booking.paid && <span className='text-primary'>Paid</span>
+                                        }
+                                    </td>
                                 </tr>
                             )
                         }
