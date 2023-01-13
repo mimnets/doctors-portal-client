@@ -28,7 +28,7 @@ const BookingModal = ({ treatment, selectedDate, setTreatment, refetch }) => {
         // And once data is saved then close the modal 
         // And display success toast
         console.log(booking);
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://doctors-portal-server-three-ruby.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
